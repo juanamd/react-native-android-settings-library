@@ -70,6 +70,9 @@ public class RNANAndroidSettingsLibraryModule extends ReactContextBaseJavaModule
         case "ACTION_MEMORY_CARD_SETTINGS":
             intentCl.setAction(Settings.ACTION_MEMORY_CARD_SETTINGS);
             break;
+        case "ACTION_SOUND_SETTINGS":
+            intentCl.setAction(Settings.ACTION_SOUND_SETTINGS);
+            break;
         case "ACTION_APPLICATION_DETAILS_SETTINGS":
             intentCl.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
             Uri uri = Uri.fromParts("package", reactContext.getPackageName(), null);
