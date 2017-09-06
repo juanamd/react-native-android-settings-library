@@ -4,6 +4,7 @@ package com.reactlibrary.androidsettings;
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.Settings;
+import android.util.Log;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -83,9 +84,13 @@ public class RNANAndroidSettingsLibraryModule extends ReactContextBaseJavaModule
             break;
     }
 
-
     intentCl.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    reactContext.startActivity(intentCl);
+    
+    try {
+      reactContext.startActivity(intentCl);
+    } catch (Exception e) {
+      Log.e("RNANAndroidSettingsLibraryPackage", Log.getStackTraceString(e));
+    }
   }
 
   @ReactMethod
