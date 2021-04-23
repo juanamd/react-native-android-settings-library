@@ -92,6 +92,14 @@ public class RNANAndroidSettingsLibraryModule extends ReactContextBaseJavaModule
 					return;
 				}
 				break;
+			case "ACTION_ZEN_MODE_PRIORITY_SETTINGS":
+				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+					intent.setAction(Settings.ACTION_ZEN_MODE_PRIORITY_SETTINGS);
+				} else {
+					promise.reject("EUNSPECIFIED", "Cannot open ACTION_ZEN_MODE_PRIORITY_SETTINGS on API version < 26");
+					return;
+				}
+				break;
 			default:
 				intent.setAction(Settings.ACTION_SETTINGS);
 				break;
